@@ -1,0 +1,24 @@
+//
+//  MessageTableViewCell.swift
+//  Parse-Sampler
+//
+//  Created by Masuhara on 2015/10/01.
+//  Copyright © 2015年 masuhara. All rights reserved.
+//
+
+import UIKit
+
+class MessageTableViewCell: UITableViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}

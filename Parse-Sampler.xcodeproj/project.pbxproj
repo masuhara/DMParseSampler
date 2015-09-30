@@ -7,20 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600E738243EA33DEA1167865 /* libPods-Parse-Sampler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9528CF68E5A9F3B27600F29 /* libPods-Parse-Sampler.a */; };
 		7A21856B1BBC0372007AFBF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21856A1BBC0372007AFBF9 /* AppDelegate.swift */; };
-		7A21856D1BBC0372007AFBF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21856C1BBC0372007AFBF9 /* ViewController.swift */; };
 		7A2185701BBC0372007AFBF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A21856E1BBC0372007AFBF9 /* Main.storyboard */; };
 		7A2185721BBC0372007AFBF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A2185711BBC0372007AFBF9 /* Assets.xcassets */; };
 		7A2185751BBC0372007AFBF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2185731BBC0372007AFBF9 /* LaunchScreen.storyboard */; };
 		7A2185831BBC03CD007AFBF9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2185801BBC03CD007AFBF9 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
 		7A2185841BBC03CD007AFBF9 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2185811BBC03CD007AFBF9 /* Default-667h@2x.png */; settings = {ASSET_TAGS = (); }; };
 		7A2185851BBC03CD007AFBF9 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2185821BBC03CD007AFBF9 /* Default-736h@3x.png */; settings = {ASSET_TAGS = (); }; };
+		7A2185901BBC083E007AFBF9 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21858F1BBC083E007AFBF9 /* BasicViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7A2185951BBC089A007AFBF9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2185941BBC089A007AFBF9 /* ChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7A2185991BBC4B7C007AFBF9 /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2185981BBC4B7C007AFBF9 /* ParseManager.swift */; settings = {ASSET_TAGS = (); }; };
+		7A21859B1BBC4C38007AFBF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21859A1BBC4C38007AFBF9 /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		7A21859D1BBC4C79007AFBF9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21859C1BBC4C79007AFBF9 /* Message.swift */; settings = {ASSET_TAGS = (); }; };
+		7A2185A01BBC4CD3007AFBF9 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21859E1BBC4CD3007AFBF9 /* MessageTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		7A2185A11BBC4CD3007AFBF9 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A21859F1BBC4CD3007AFBF9 /* MessageTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1802CDCAA51136D69B53B52E /* Pods-Parse-Sampler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parse-Sampler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parse-Sampler/Pods-Parse-Sampler.debug.xcconfig"; sourceTree = "<group>"; };
 		7A2185671BBC0372007AFBF9 /* Parse-Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parse-Sampler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A21856A1BBC0372007AFBF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7A21856C1BBC0372007AFBF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7A21856F1BBC0372007AFBF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A2185711BBC0372007AFBF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A2185741BBC0372007AFBF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +35,16 @@
 		7A2185801BBC03CD007AFBF9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7A2185811BBC03CD007AFBF9 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		7A2185821BBC03CD007AFBF9 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
+		7A21858B1BBC079A007AFBF9 /* Parse-Sampler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Parse-Sampler-Bridging-Header.h"; sourceTree = "<group>"; };
+		7A21858F1BBC083E007AFBF9 /* BasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		7A2185941BBC089A007AFBF9 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		7A2185981BBC4B7C007AFBF9 /* ParseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
+		7A21859A1BBC4C38007AFBF9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7A21859C1BBC4C79007AFBF9 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7A21859E1BBC4CD3007AFBF9 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		7A21859F1BBC4CD3007AFBF9 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		C9528CF68E5A9F3B27600F29 /* libPods-Parse-Sampler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Parse-Sampler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0343A2E5E364D19F1AEFEE9 /* Pods-Parse-Sampler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parse-Sampler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parse-Sampler/Pods-Parse-Sampler.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				600E738243EA33DEA1167865 /* libPods-Parse-Sampler.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,7 +62,9 @@
 		7A21855E1BBC0372007AFBF9 = {
 			isa = PBXGroup;
 			children = (
+				D40F2184C9C57BB564F8C068 /* Frameworks */,
 				7A2185691BBC0372007AFBF9 /* Parse-Sampler */,
+				831DF89749A38D13B8DAAAE4 /* Pods */,
 				7A2185681BBC0372007AFBF9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,10 +81,11 @@
 			isa = PBXGroup;
 			children = (
 				7A21857C1BBC038B007AFBF9 /* Assets */,
-				7A2185891BBC041E007AFBF9 /* Storyboard */,
-				7A2185881BBC0418007AFBF9 /* Models */,
-				7A2185871BBC040C007AFBF9 /* Views */,
 				7A2185861BBC0400007AFBF9 /* Controllers */,
+				7A2185961BBC4B52007AFBF9 /* Managers */,
+				7A2185881BBC0418007AFBF9 /* Models */,
+				7A2185891BBC041E007AFBF9 /* Storyboard */,
+				7A2185871BBC040C007AFBF9 /* Views */,
 				7A2185711BBC0372007AFBF9 /* Assets.xcassets */,
 				7A2185761BBC0372007AFBF9 /* Info.plist */,
 			);
@@ -75,8 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				7A21857E1BBC03B8007AFBF9 /* Images */,
+				7A21858B1BBC079A007AFBF9 /* Parse-Sampler-Bridging-Header.h */,
 			);
-			name = Assets;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		7A21857E1BBC03B8007AFBF9 /* Images */ = {
@@ -84,7 +106,7 @@
 			children = (
 				7A21857F1BBC03CD007AFBF9 /* Defaults */,
 			);
-			name = Images;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		7A21857F1BBC03CD007AFBF9 /* Defaults */ = {
@@ -101,23 +123,28 @@
 			isa = PBXGroup;
 			children = (
 				7A21856A1BBC0372007AFBF9 /* AppDelegate.swift */,
-				7A21856C1BBC0372007AFBF9 /* ViewController.swift */,
+				7A21858F1BBC083E007AFBF9 /* BasicViewController.swift */,
+				7A2185941BBC089A007AFBF9 /* ChatViewController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		7A2185871BBC040C007AFBF9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7A21859E1BBC4CD3007AFBF9 /* MessageTableViewCell.swift */,
+				7A21859F1BBC4CD3007AFBF9 /* MessageTableViewCell.xib */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7A2185881BBC0418007AFBF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A21859C1BBC4C79007AFBF9 /* Message.swift */,
+				7A21859A1BBC4C38007AFBF9 /* User.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7A2185891BBC041E007AFBF9 /* Storyboard */ = {
@@ -126,7 +153,32 @@
 				7A2185731BBC0372007AFBF9 /* LaunchScreen.storyboard */,
 				7A21856E1BBC0372007AFBF9 /* Main.storyboard */,
 			);
-			name = Storyboard;
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		7A2185961BBC4B52007AFBF9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7A2185981BBC4B7C007AFBF9 /* ParseManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		831DF89749A38D13B8DAAAE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1802CDCAA51136D69B53B52E /* Pods-Parse-Sampler.debug.xcconfig */,
+				E0343A2E5E364D19F1AEFEE9 /* Pods-Parse-Sampler.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D40F2184C9C57BB564F8C068 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9528CF68E5A9F3B27600F29 /* libPods-Parse-Sampler.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A2185791BBC0372007AFBF9 /* Build configuration list for PBXNativeTarget "Parse-Sampler" */;
 			buildPhases = (
+				7D8674F2E96FD527B4BF5F91 /* Check Pods Manifest.lock */,
 				7A2185631BBC0372007AFBF9 /* Sources */,
 				7A2185641BBC0372007AFBF9 /* Frameworks */,
 				7A2185651BBC0372007AFBF9 /* Resources */,
+				2A6F4091F8F88566A43A3150 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,6 +209,7 @@
 		7A21855F1BBC0372007AFBF9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = masuhara;
 				TargetAttributes = {
@@ -191,19 +246,58 @@
 				7A2185721BBC0372007AFBF9 /* Assets.xcassets in Resources */,
 				7A2185701BBC0372007AFBF9 /* Main.storyboard in Resources */,
 				7A2185841BBC03CD007AFBF9 /* Default-667h@2x.png in Resources */,
+				7A2185A11BBC4CD3007AFBF9 /* MessageTableViewCell.xib in Resources */,
 				7A2185851BBC03CD007AFBF9 /* Default-736h@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A6F4091F8F88566A43A3150 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Parse-Sampler/Pods-Parse-Sampler-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D8674F2E96FD527B4BF5F91 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7A2185631BBC0372007AFBF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A21856D1BBC0372007AFBF9 /* ViewController.swift in Sources */,
+				7A2185A01BBC4CD3007AFBF9 /* MessageTableViewCell.swift in Sources */,
 				7A21856B1BBC0372007AFBF9 /* AppDelegate.swift in Sources */,
+				7A2185951BBC089A007AFBF9 /* ChatViewController.swift in Sources */,
+				7A2185901BBC083E007AFBF9 /* BasicViewController.swift in Sources */,
+				7A21859D1BBC4C79007AFBF9 /* Message.swift in Sources */,
+				7A21859B1BBC4C38007AFBF9 /* User.swift in Sources */,
+				7A2185991BBC4B7C007AFBF9 /* ParseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +310,7 @@
 				7A21856F1BBC0372007AFBF9 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		7A2185731BBC0372007AFBF9 /* LaunchScreen.storyboard */ = {
@@ -224,6 +319,7 @@
 				7A2185741BBC0372007AFBF9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -312,25 +408,32 @@
 		};
 		7A21857A1BBC0372007AFBF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1802CDCAA51136D69B53B52E /* Pods-Parse-Sampler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Parse-Sampler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.masuhara.Parse-Sampler";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Parse-Sampler/Parse-Sampler-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		7A21857B1BBC0372007AFBF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0343A2E5E364D19F1AEFEE9 /* Pods-Parse-Sampler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Parse-Sampler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.masuhara.Parse-Sampler";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Parse-Sampler/Parse-Sampler-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -353,6 +456,7 @@
 				7A21857B1BBC0372007AFBF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
