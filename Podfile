@@ -3,5 +3,6 @@
 
 target 'Parse-Sampler' do
 pod 'Parse', '~> 1.8.5'
+pod 'SVProgressHUD', '~> 1.1.3'
 end
 
