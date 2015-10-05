@@ -19,6 +19,7 @@ class BasicViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var refreshButton: UIBarButtonItem!
     @IBOutlet var addButton: UIBarButtonItem!
     var refreshControl: UIRefreshControl!
+    var selectedIndexPath: NSIndexPath!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ class BasicViewController: UIViewController, UITableViewDataSource, UITableViewD
         if self.objectArray.count > 0 {
             cell.textLabel!.text = self.objectArray[indexPath.row]["text"] as? String
         }
+        self.selectedIndexPath = indexPath
         return cell
     }
     
@@ -52,19 +54,22 @@ class BasicViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
+            self.selectedIndexPath = indexPath
+            self.delete()
             self.objectArray.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            self.delete(indexPath)
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.showInputAlert("編集モード", indexPath: indexPath, mainButtonTitle: "保存", cancelButtonTitle: "キャンセル")
+        self.selectedIndexPath = indexPath
+        self.showInputAlert("編集モード", mainButtonTitle: "保存", cancelButtonTitle: "キャンセル")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     // MARK: Private
     @IBAction private func create() {
-        self.showInputAlert("テキストを入力", indexPath: NSIndexPath(forRow: 0, inSection: 0), mainButtonTitle: "保存", cancelButtonTitle: "キャンセル")
+        self.showInputAlert("テキストを入力", mainButtonTitle: "保存", cancelButtonTitle: "キャンセル")
     }
     
     @IBAction private func read() {
@@ -90,14 +95,12 @@ class BasicViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    private func update(alertView: UIAlertView, selectedIndexPath: NSIndexPath) {
+    private func update(alertView: UIAlertView) {
         // update
         let query = PFQuery(className: "Basic")
-        // query.orderByDescending("createdAt")
-        print(objectArray[selectedIndexPath.row].objectId!)
-        query.getObjectInBackgroundWithId(objectArray[selectedIndexPath.row].objectId!) { object, error in
+        query.getObjectInBackgroundWithId(objectArray[self.selectedIndexPath.row].objectId!) { object, error in
             if error == nil {
-                print(object?.valueForKey("text"))
+                object!["text"] = alertView.textFieldAtIndex(0)!.text
                 object!.saveInBackgroundWithBlock { success, error in
                     if success {
                         AlertManager.showAlert(.Success, message: "保存成功")
@@ -106,16 +109,16 @@ class BasicViewController: UIViewController, UITableViewDataSource, UITableViewD
                     }
                 }
             }else {
-                
+               print(error)
             }
         }
     }
     
-    private func delete(selectedIndexPath: NSIndexPath) {
+    private func delete() {
         let query: PFQuery = PFQuery(className: "Basic")
         query.orderByDescending("createdAt")
-        print(selectedIndexPath)
-        query.getObjectInBackgroundWithId(objectArray[selectedIndexPath.row].objectId!) { object, error in
+        print(self.selectedIndexPath)
+        query.getObjectInBackgroundWithId(objectArray[self.selectedIndexPath.row].objectId!) { object, error in
             if error == nil {
                 object!.deleteInBackgroundWithBlock { success, error in
                     if error == nil {
@@ -130,17 +133,15 @@ class BasicViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    private func showInputAlert(title: String, indexPath: NSIndexPath, mainButtonTitle: String, cancelButtonTitle: String) {
+    private func showInputAlert(title: String, mainButtonTitle: String, cancelButtonTitle: String) {
         let alert = UIAlertView()
         alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
         alert.title = title
         if alert.title == "編集モード" {
             alert.tag = 1
+            alert.textFieldAtIndex(0)!.text = self.objectArray[selectedIndexPath.row]["text"] as? String
         }else {
             alert.tag = 0
-        }
-        if self.objectArray.count > 0 {
-            alert.textFieldAtIndex(0)!.text = self.objectArray[indexPath.row]["text"] as? String
         }
         alert.textFieldAtIndex(0)!.placeholder = "ここに文字を入力"
         alert.addButtonWithTitle(mainButtonTitle)
@@ -157,6 +158,7 @@ class BasicViewController: UIViewController, UITableViewDataSource, UITableViewD
         if alertView.tag == 1 {
             if buttonIndex == 0 {
                 // update
+                self.update(alertView)
             }else {
                 // cancel
             }
