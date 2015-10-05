@@ -17,8 +17,8 @@ ChatViewController
 サンプルアプリのダウンロード方法
 =====================
 ページ右下の「Download ZIP」もしくはターミナルで下記コマンド
-$ cd ~/Desktop/
-$ git clone https://github.com/masuhara/Parse-Sample-Swift2.0.git
+    $ cd ~/Desktop/
+    $ git clone https://github.com/masuhara/Parse-Sample-Swift2.0.git
 
 
 動作環境
