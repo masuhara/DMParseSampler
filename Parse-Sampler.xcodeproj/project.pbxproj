@@ -25,6 +25,7 @@
 		7A2E42E11BC03E7B00ABCC7B /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E42E01BC03E7B00ABCC7B /* AlertManager.swift */; settings = {ASSET_TAGS = (); }; };
 		7A2E42E41BC0F79200ABCC7B /* pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E42E31BC0F79200ABCC7B /* pencil@2x.png */; settings = {ASSET_TAGS = (); }; };
 		7A2E42E61BC114A500ABCC7B /* chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E42E51BC114A500ABCC7B /* chat@2x.png */; settings = {ASSET_TAGS = (); }; };
+		7A4395431BC636B300017B29 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4395421BC636B300017B29 /* FriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		7A2E42E01BC03E7B00ABCC7B /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		7A2E42E31BC0F79200ABCC7B /* pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencil@2x.png"; sourceTree = "<group>"; };
 		7A2E42E51BC114A500ABCC7B /* chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat@2x.png"; sourceTree = "<group>"; };
+		7A4395421BC636B300017B29 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		C9528CF68E5A9F3B27600F29 /* libPods-Parse-Sampler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Parse-Sampler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0343A2E5E364D19F1AEFEE9 /* Pods-Parse-Sampler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parse-Sampler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parse-Sampler/Pods-Parse-Sampler.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +134,7 @@
 				7A21856A1BBC0372007AFBF9 /* AppDelegate.swift */,
 				7A21858F1BBC083E007AFBF9 /* BasicViewController.swift */,
 				7A2185941BBC089A007AFBF9 /* ChatViewController.swift */,
+				7A4395421BC636B300017B29 /* FriendsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,8 +160,8 @@
 		7A2185891BBC041E007AFBF9 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				7A2185731BBC0372007AFBF9 /* LaunchScreen.storyboard */,
 				7A21856E1BBC0372007AFBF9 /* Main.storyboard */,
+				7A2185731BBC0372007AFBF9 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2E42E11BC03E7B00ABCC7B /* AlertManager.swift in Sources */,
+				7A4395431BC636B300017B29 /* FriendsViewController.swift in Sources */,
 				7A2185A01BBC4CD3007AFBF9 /* MessageTableViewCell.swift in Sources */,
 				7A21856B1BBC0372007AFBF9 /* AppDelegate.swift in Sources */,
 				7A2185951BBC089A007AFBF9 /* ChatViewController.swift in Sources */,

@@ -157,14 +157,12 @@ class BasicViewController: UIViewController, UITableViewDataSource, UITableViewD
     func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
         if alertView.tag == 1 {
             if buttonIndex == 0 {
-                // update
                 self.update(alertView)
             }else {
                 // cancel
             }
         }else {
             if buttonIndex == 0 {
-                // save
                 self.save(alertView)
             }else {
                 // cancel

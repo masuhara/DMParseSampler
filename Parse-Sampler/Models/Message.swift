@@ -9,5 +9,21 @@
 import UIKit
 
 class Message: NSObject {
-
+    
+    var roomID: String!
+    var messageArray = [NSDictionary]()
+    
+    class var sharedInstance: Message {
+        // Singleton
+        struct Static{
+            static let instance: Message = Message()
+        }
+        return Static.instance
+    }
+    
+    override private init() {
+        super.init()
+        self.roomID = ""
+        self.messageArray = [NSDictionary]()
+    }
 }

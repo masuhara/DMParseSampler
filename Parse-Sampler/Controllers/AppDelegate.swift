@@ -15,7 +15,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Parse.setApplicationId("HH18BAqPPKUInLfVcfBY7wi4ZQV6ocQ2Y9wMul0X",clientKey:"4Oc4ifwGm6qtClC4NgNGCFO7FQYBwerZpnRpKWMB")
+        ParseManager.setID("HH18BAqPPKUInLfVcfBY7wi4ZQV6ocQ2Y9wMul0X", withKey: "4Oc4ifwGm6qtClC4NgNGCFO7FQYBwerZpnRpKWMB")
+        
+        PFUser.currentUser()
+        let defaultACL = PFACL()
+        defaultACL.setPublicReadAccess(true)
+        PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser: true)
+        
+        if application.applicationState != UIApplicationState.Background {
+            
+            let preBackgroundPush = !application.respondsToSelector("backgroundRefreshStatus")
+            let oldPushHandlerOnly = !self.respondsToSelector("application:didReceiveRemoteNotification:fetchCompletionHandler:")
+            var noPushPayload = false;
+            if let options = launchOptions {
+                noPushPayload = options[UIApplicationLaunchOptionsRemoteNotificationKey] != nil;
+            }
+            if (preBackgroundPush || oldPushHandlerOnly || noPushPayload) {
+                //PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+                PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
+            }
+        }
+        if application.respondsToSelector("registerUserNotificationSettings:") {
+            let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        }else {
+            print("else")
+        }
+        
         return true
     }
 
@@ -40,7 +68,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    // MARK: Push Notifications
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+            if error != nil {
+                // TODO: GoogleAnalytics
+                print("parsePushUserAssign save error.")
+            }else {
+                // TODO: GoogleAnalytics
+            }
+        }
+        
+        PFPush.subscribeToChannelInBackground("", block: { (succeeded, error) -> Void in
+            if succeeded {
+                // TODO: GoogleAnalytics
+                print("ParseStarterProject successfully subscribed to push notifications on the broadcast channel.");
+            } else {
+                // TODO: GoogleAnalytics
+                print("ParseStarterProject failed to subscribe to push notifications on the broadcast channel with error = %@.", error)
+            }
+        })
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        if error.code == 3010 {
+            print("Push notifications are not supported in the iOS Simulator.")
+        } else {
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
+        }
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
+    }
 }
 

@@ -9,5 +9,7 @@
 import UIKit
 
 class ParseManager: NSObject {
-
+    class func setID(id: String, withKey key: String) {
+        Parse.setApplicationId(id, clientKey:key)
+    }
 }
