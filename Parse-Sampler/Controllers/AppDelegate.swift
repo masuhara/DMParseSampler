@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFUser.currentUser()
         let defaultACL = PFACL()
         defaultACL.setPublicReadAccess(true)
+        defaultACL.setPublicWriteAccess(true)
         PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser: true)
         
         if application.applicationState != UIApplicationState.Background {
@@ -73,24 +74,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)
-        installation.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+        installation.saveInBackgroundWithBlock { succeeded, error in
             if error != nil {
                 // TODO: GoogleAnalytics
                 print("parsePushUserAssign save error.")
             }else {
-                // TODO: GoogleAnalytics
+                PFPush.subscribeToChannelInBackground("all" , block: { succeeded, error in
+                    if succeeded {
+                        // TODO: GoogleAnalytics
+                        print("ParseStarterProject successfully subscribed to push notifications on the broadcast channel.");
+                    }else {
+                        // TODO: GoogleAnalytics
+                        print("ParseStarterProject failed to subscribe to push notifications on the broadcast channel with error = %@.", error)
+                    }
+                })
             }
         }
-        
-        PFPush.subscribeToChannelInBackground("", block: { (succeeded, error) -> Void in
-            if succeeded {
-                // TODO: GoogleAnalytics
-                print("ParseStarterProject successfully subscribed to push notifications on the broadcast channel.");
-            } else {
-                // TODO: GoogleAnalytics
-                print("ParseStarterProject failed to subscribe to push notifications on the broadcast channel with error = %@.", error)
-            }
-        })
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {

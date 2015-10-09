@@ -26,6 +26,8 @@
 		7A2E42E41BC0F79200ABCC7B /* pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E42E31BC0F79200ABCC7B /* pencil@2x.png */; settings = {ASSET_TAGS = (); }; };
 		7A2E42E61BC114A500ABCC7B /* chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E42E51BC114A500ABCC7B /* chat@2x.png */; settings = {ASSET_TAGS = (); }; };
 		7A4395431BC636B300017B29 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4395421BC636B300017B29 /* FriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7A4395451BC6BE7C00017B29 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4395441BC6BE7C00017B29 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7A4395471BC6BE8700017B29 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4395461BC6BE8700017B29 /* SignInViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		7A2E42E31BC0F79200ABCC7B /* pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencil@2x.png"; sourceTree = "<group>"; };
 		7A2E42E51BC114A500ABCC7B /* chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat@2x.png"; sourceTree = "<group>"; };
 		7A4395421BC636B300017B29 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		7A4395441BC6BE7C00017B29 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7A4395461BC6BE8700017B29 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C9528CF68E5A9F3B27600F29 /* libPods-Parse-Sampler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Parse-Sampler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0343A2E5E364D19F1AEFEE9 /* Pods-Parse-Sampler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parse-Sampler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parse-Sampler/Pods-Parse-Sampler.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +139,8 @@
 				7A21858F1BBC083E007AFBF9 /* BasicViewController.swift */,
 				7A2185941BBC089A007AFBF9 /* ChatViewController.swift */,
 				7A4395421BC636B300017B29 /* FriendsViewController.swift */,
+				7A4395441BC6BE7C00017B29 /* SignUpViewController.swift */,
+				7A4395461BC6BE8700017B29 /* SignInViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 				TargetAttributes = {
 					7A2185661BBC0372007AFBF9 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = XFUA4YPVDB;
 					};
 				};
 			};
@@ -313,10 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4395471BC6BE8700017B29 /* SignInViewController.swift in Sources */,
 				7A2E42E11BC03E7B00ABCC7B /* AlertManager.swift in Sources */,
 				7A4395431BC636B300017B29 /* FriendsViewController.swift in Sources */,
 				7A2185A01BBC4CD3007AFBF9 /* MessageTableViewCell.swift in Sources */,
 				7A21856B1BBC0372007AFBF9 /* AppDelegate.swift in Sources */,
+				7A4395451BC6BE7C00017B29 /* SignUpViewController.swift in Sources */,
 				7A2185951BBC089A007AFBF9 /* ChatViewController.swift in Sources */,
 				7A2185901BBC083E007AFBF9 /* BasicViewController.swift in Sources */,
 				7A21859D1BBC4C79007AFBF9 /* Message.swift in Sources */,
@@ -366,7 +375,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daisuke Masuhara (7DDW2PTU3E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Daisuke Masuhara (7DDW2PTU3E)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -388,6 +398,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "b6564323-4faa-4545-934e-eb9582c8782a";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -410,7 +421,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daisuke Masuhara (7DDW2PTU3E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Daisuke Masuhara (7DDW2PTU3E)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -425,6 +437,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "b6564323-4faa-4545-934e-eb9582c8782a";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -436,11 +449,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daisuke Masuhara (7DDW2PTU3E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Daisuke Masuhara (7DDW2PTU3E)";
 				INFOPLIST_FILE = "Parse-Sampler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.masuhara.Parse-Sampler";
+				PRODUCT_BUNDLE_IDENTIFIER = ParseSamplerDevelop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b6564323-4faa-4545-934e-eb9582c8782a";
 				SWIFT_OBJC_BRIDGING_HEADER = "Parse-Sampler/Assets/Parse-Sampler-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -452,11 +468,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daisuke Masuhara (7DDW2PTU3E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Daisuke Masuhara (7DDW2PTU3E)";
 				INFOPLIST_FILE = "Parse-Sampler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.masuhara.Parse-Sampler";
+				PRODUCT_BUNDLE_IDENTIFIER = ParseSamplerDevelop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b6564323-4faa-4545-934e-eb9582c8782a";
 				SWIFT_OBJC_BRIDGING_HEADER = "Parse-Sampler/Assets/Parse-Sampler-Bridging-Header.h";
 			};
 			name = Release;

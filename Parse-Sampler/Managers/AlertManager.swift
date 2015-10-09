@@ -17,15 +17,12 @@ class AlertManager: NSObject {
     class func showAlert(alertType: AlertType, message: String) {
         switch alertType {
         case .Normal:
-            //普通のアラート
             SVProgressHUD.showWithStatus(message)
             break
         case .Success:
-            //成功したときのアラート
             SVProgressHUD.showSuccessWithStatus(message)
             break
         case .Error:
-            //エラー時のアラート
             SVProgressHUD.showErrorWithStatus(message)
             break
         }
