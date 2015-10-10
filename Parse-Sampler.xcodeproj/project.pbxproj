@@ -242,6 +242,14 @@
 					7A2185661BBC0372007AFBF9 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = XFUA4YPVDB;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

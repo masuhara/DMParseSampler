@@ -64,6 +64,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func back() {
-        self.navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

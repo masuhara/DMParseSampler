@@ -17,11 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         ParseManager.setID("HH18BAqPPKUInLfVcfBY7wi4ZQV6ocQ2Y9wMul0X", withKey: "4Oc4ifwGm6qtClC4NgNGCFO7FQYBwerZpnRpKWMB")
         
-        PFUser.currentUser()
-        let defaultACL = PFACL()
-        defaultACL.setPublicReadAccess(true)
-        defaultACL.setPublicWriteAccess(true)
-        PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser: true)
         
         if application.applicationState != UIApplicationState.Background {
             
@@ -36,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
             }
         }
+        
         if application.respondsToSelector("registerUserNotificationSettings:") {
             let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
             UIApplication.sharedApplication().registerUserNotificationSettings(settings)
@@ -95,13 +91,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         if error.code == 3010 {
             print("Push notifications are not supported in the iOS Simulator.")
-        } else {
+        }else {
             print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
         }
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        print(userInfo)
         PFPush.handlePush(userInfo)
+        self.registerToRequests(userInfo)
+    }
+    
+    func registerToRequests(userInfo: [NSObject : AnyObject]) {
+        /*
+        let currentUser = PFUser.currentUser()!
+        currentUser.addUniqueObject(userInfo["alert"]!, forKey: "requests")
+        currentUser.saveInBackgroundWithBlock { succeeded, error in
+            if succeeded == true {
+                
+            }else {
+                print(error)
+            }
+        }
+*/
     }
 }
 

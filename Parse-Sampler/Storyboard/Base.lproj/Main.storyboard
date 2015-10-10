@@ -80,6 +80,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Friends" id="uvh-D8-vni">
+                        <barButtonItem key="leftBarButtonItem" title="SignOut" id="SDY-Ud-bnH">
+                            <connections>
+                                <action selector="signOut" destination="VPZ-r7-vY8" id="eMb-4n-en0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="bC5-OU-JQm"/>
                     </navigationItem>
                     <connections>
